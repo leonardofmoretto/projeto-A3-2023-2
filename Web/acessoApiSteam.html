@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" id="textBox">
+  <button id="btn">Oi</button>
+  <div id="outro">
+
+  </div>
+  <script>
+    let filePath = 'api.steampowered.com.json';
+
+    let btn = document.getElementById("btn");
+    let textBox = document.getElementById("textBox");
+
+    btn.addEventListener('click', searchJson);
+
+    function searchJson() {
+      document.getElementById("outro").innerHTML = "";
+      
+      // Fetch the JSON file asynchronously
+      fetch(filePath)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Failed to fetch ${filePath}: ${response.status} ${response.statusText}`);
+          }
+          return response.json();
+        })
+        .then(jsonData => {
+          const matchingObjects = [];
+          searchWord = textBox.value;
+          jsonData.applist.apps.forEach(app => {
+            if (app.name.toLowerCase().includes(searchWord.toLowerCase())) {
+              matchingObjects.push(app);
+            }
+          });
+          matchingObjects.forEach(app => {
+            document.getElementById("outro").innerHTML += `${app.name} - ${app.appid} <br>`;
+          });
+          console.log(matchingObjects);
+        })
+        .catch(error => {
+          console.error('Error fetching or parsing JSON file:', error);
+        });
+    }
+  </script>
+</body>
+
+</html>

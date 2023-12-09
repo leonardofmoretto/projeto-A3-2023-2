@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+   
+    CEP
+    <input  id ="txtCep" type="text">
+    <button id="consultar">consultar</button>
+    <div id="informacoes"></div>
+
+
+    <script>
+
+        let btnConsultar = document.getElementById("consultar");
+        let listagem = document.getElementById("informacoes");
+
+        btnConsultar.addEventListener('click', consultarCEP);
+
+        function consultarCEP() {
+           let cep =  document.getElementById("txtCep").value;
+            fetch("tf2.json")
+                .then((response) => {
+                    response.json().then((dados) => {
+                        console.log(dados); 
+                        listagem.innerHTML = `
+                        <li>${dados.oi.data.name}</li>
+                        <img src= "${dados.oi.data.header_image}"></img>`;
+                    })
+                })
+        }
+    </script>
+</body>
+
+
+
+</html>

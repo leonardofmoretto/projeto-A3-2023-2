@@ -1,0 +1,536 @@
+{
+    "oi": {
+        "success": true,
+        "data": {
+            "type": "game",
+            "name": "Team Fortress 2",
+            "steam_appid": 440,
+            "required_age": 0,
+            "is_free": true,
+            "dlc": [
+                629330
+            ],
+            "detailed_description": "<p><strong>\"A maior diversão que você pode ter on-line\"<\/strong> — PC Gamer<br>\r\n <strong>Agora é GRATUITA!<\/strong><br>\r\n Não há nada a esconder! Jogue o quanto e por quanto tempo quiser!<\/p>\r\n <p><strong>O jogo gratuito mais bem-avaliado de todos os tempos!<\/strong><br>\r\n Um dos jogos de ação on-line mais populares de todos os tempos, Team Fortress 2 fornece atualizações gratuitas constantemente — novos modos de jogo, mapas, equipamentos e, o mais importante, chapéus. Nove classes distintas fornecem uma grande gama de habilidades táticas e personalidades e se encaixam nas habilidades de qualquer jogador.<\/p> \r\n <p><strong>Novo no TF? Não esquenta!<\/strong><br>\r\n Independentemente do seu estilo e experiência, nós temos um personagem para você. Modos detalhados de treinamento e prática off-line o ajudarão a melhorar as suas habilidades antes de começar a jogar em um dos vários modos de jogos do TF2, incluindo Capture a Bandeira, Pontos de Controle, Carga Explosiva, Arena, Rei do Pedaço e mais.<\/p>\r\n <p><strong>Faça de um personagem o seu próprio!<\/strong><br>\r\n Há centenas de armas, chapéus e mais para colecionar, fabricar, comprar e trocar. Ajuste a sua classe favorita para se encaixar no seu estilo de jogo e gosto pessoal. Você não precisa pagar para vencer — virtualmente todos os itens da Loja Mann Co. também podem ser encontrados jogando.<\/p>\r\n<a href=\"http:\/\/www.teamfortress.com\/freetoplay\"><img src=\"http:\/\/storefront.steampowered.com\/v\/gfx\/apps\/440\/extras\/page_banner_english1.jpg\"><\/a>",
+            "about_the_game": "<p><strong>\"A maior diversão que você pode ter on-line\"<\/strong> — PC Gamer<br>\r\n <strong>Agora é GRATUITA!<\/strong><br>\r\n Não há nada a esconder! Jogue o quanto e por quanto tempo quiser!<\/p>\r\n <p><strong>O jogo gratuito mais bem-avaliado de todos os tempos!<\/strong><br>\r\n Um dos jogos de ação on-line mais populares de todos os tempos, Team Fortress 2 fornece atualizações gratuitas constantemente — novos modos de jogo, mapas, equipamentos e, o mais importante, chapéus. Nove classes distintas fornecem uma grande gama de habilidades táticas e personalidades e se encaixam nas habilidades de qualquer jogador.<\/p> \r\n <p><strong>Novo no TF? Não esquenta!<\/strong><br>\r\n Independentemente do seu estilo e experiência, nós temos um personagem para você. Modos detalhados de treinamento e prática off-line o ajudarão a melhorar as suas habilidades antes de começar a jogar em um dos vários modos de jogos do TF2, incluindo Capture a Bandeira, Pontos de Controle, Carga Explosiva, Arena, Rei do Pedaço e mais.<\/p>\r\n <p><strong>Faça de um personagem o seu próprio!<\/strong><br>\r\n Há centenas de armas, chapéus e mais para colecionar, fabricar, comprar e trocar. Ajuste a sua classe favorita para se encaixar no seu estilo de jogo e gosto pessoal. Você não precisa pagar para vencer — virtualmente todos os itens da Loja Mann Co. também podem ser encontrados jogando.<\/p>\r\n<a href=\"http:\/\/www.teamfortress.com\/freetoplay\"><img src=\"http:\/\/storefront.steampowered.com\/v\/gfx\/apps\/440\/extras\/page_banner_english1.jpg\"><\/a>",
+            "short_description": "Nove classes distintas providenciam uma enorme variação de habilidades táticas e personalidades. Constantemente atualizado com novos modos de jogo, mapas, equipamentos e o mais importante: chapéus!",
+            "supported_languages": "Inglês<strong>*<\/strong>, Dinamarquês, Holandês, Finlandês, Francês, Alemão, Italiano, Japonês, Norueguês, Polonês, Português (Portugal), Russo, Chinês simplificado, Espanhol (Espanha), Sueco, Chinês tradicional, Coreano, Tcheco, Húngaro, Português (Brasil), Turco, Grego, Búlgaro, Romeno, Tailandês, Ucraniano<br><strong>*<\/strong>idiomas com suporte total de áudio",
+            "header_image": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/header.jpg?t=1695767057",
+            "capsule_image": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/capsule_231x87.jpg?t=1695767057",
+            "capsule_imagev5": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/capsule_184x69.jpg?t=1695767057",
+            "website": "http:\/\/www.teamfortress.com\/",
+            "pc_requirements": {
+                "minimum": "<strong>Mínimos:<\/strong><br><ul class=\"bb_ul\"><li><strong>SO *:<\/strong> Windows® 7 (32\/64-bit)\/Vista\/XP<br><\/li><li><strong>Processador:<\/strong> 1.7 GHz Processor or better<br><\/li><li><strong>Memória:<\/strong> 512 MB de RAM<br><\/li><li><strong>DirectX:<\/strong> Versão 8.1<br><\/li><li><strong>Rede:<\/strong> Conexão de internet banda larga<br><\/li><li><strong>Armazenamento:<\/strong> 15 GB de espaço disponível<\/li><\/ul>",
+                "recommended": "<strong>Recomendados:<\/strong><br><ul class=\"bb_ul\"><li><strong>SO *:<\/strong> Windows® 7 (32\/64-bit)<br><\/li><li><strong>Processador:<\/strong> Pentium 4 processor (3.0GHz, or better)<br><\/li><li><strong>Memória:<\/strong> 1 GB de RAM<br><\/li><li><strong>DirectX:<\/strong> Versão 9.0c<br><\/li><li><strong>Rede:<\/strong> Conexão de internet banda larga<br><\/li><li><strong>Armazenamento:<\/strong> 15 GB de espaço disponível<\/li><\/ul>"
+            },
+            "mac_requirements": {
+                "minimum": "<strong>Mínimos:<\/strong><br><ul class=\"bb_ul\"><li><strong>SO:<\/strong> OS X version Leopard 10.5.8 and above<br><\/li><li><strong>Processador:<\/strong> 1.7 GHz Processor or better<br><\/li><li><strong>Memória:<\/strong> 1 GB de RAM<br><\/li><li><strong>Placa de vídeo:<\/strong> NVIDIA GeForce 8 or higher, ATI X1600 or higher, Intel HD 3000 or higher<br><\/li><li><strong>Rede:<\/strong> Conexão de internet banda larga<br><\/li><li><strong>Armazenamento:<\/strong> 15 GB de espaço disponível<\/li><\/ul>"
+            },
+            "linux_requirements": {
+                "minimum": "<strong>Mínimos:<\/strong><br><ul class=\"bb_ul\"><li><strong>SO:<\/strong> Ubuntu 12.04<br><\/li><li><strong>Processador:<\/strong> Dual core from Intel or AMD at 2.8 GHz<br><\/li><li><strong>Memória:<\/strong> 1 GB de RAM<br><\/li><li><strong>Placa de vídeo:<\/strong> nVidia GeForce 8600\/9600GT, ATI\/AMD Radeon HD2600\/3600 (Graphic Drivers: nVidia 310, AMD 12.11), OpenGL 2.1<br><\/li><li><strong>Rede:<\/strong> Conexão de internet banda larga<br><\/li><li><strong>Armazenamento:<\/strong> 15 GB de espaço disponível<br><\/li><li><strong>Placa de som:<\/strong> OpenAL Compatible Sound Card<\/li><\/ul>"
+            },
+            "developers": [
+                "Valve"
+            ],
+            "publishers": [
+                "Valve"
+            ],
+            "packages": [
+                197845,
+                330198,
+                469
+            ],
+            "package_groups": [
+                {
+                    "name": "default",
+                    "title": "Comprar Team Fortress 2",
+                    "description": "",
+                    "selection_text": "Selecione uma opção de compra",
+                    "save_text": "",
+                    "display_type": 0,
+                    "is_recurring_subscription": "false",
+                    "subs": [
+                        {
+                            "packageid": 197845,
+                            "percent_savings_text": " ",
+                            "percent_savings": 0,
+                            "option_text": "Team Fortress 2 - Commercial License - Gratuito",
+                            "option_description": "",
+                            "can_get_free_license": "0",
+                            "is_free_license": true,
+                            "price_in_cents_with_discount": 0
+                        },
+                        {
+                            "packageid": 469,
+                            "percent_savings_text": " ",
+                            "percent_savings": 0,
+                            "option_text": "The Orange Box - R$ 59,99",
+                            "option_description": "",
+                            "can_get_free_license": "0",
+                            "is_free_license": false,
+                            "price_in_cents_with_discount": 5999
+                        }
+                    ]
+                }
+            ],
+            "platforms": {
+                "windows": true,
+                "mac": true,
+                "linux": true
+            },
+            "metacritic": {
+                "score": 92,
+                "url": "https:\/\/www.metacritic.com\/game\/pc\/team-fortress-2?ftag=MCD-06-10aaa1f"
+            },
+            "categories": [
+                {
+                    "id": 1,
+                    "description": "Multijogador"
+                },
+                {
+                    "id": 27,
+                    "description": "Multijogador multiplataforma"
+                },
+                {
+                    "id": 22,
+                    "description": "Conquistas Steam"
+                },
+                {
+                    "id": 29,
+                    "description": "Cartas Colecionáveis Steam"
+                },
+                {
+                    "id": 13,
+                    "description": "Legendas disponíveis"
+                },
+                {
+                    "id": 30,
+                    "description": "Oficina Steam"
+                },
+                {
+                    "id": 35,
+                    "description": "Compras em aplicativo"
+                },
+                {
+                    "id": 18,
+                    "description": "Compat. parcial com controle"
+                },
+                {
+                    "id": 8,
+                    "description": "Usa Valve Antitrapaça"
+                },
+                {
+                    "id": 15,
+                    "description": "Estatísticas"
+                },
+                {
+                    "id": 17,
+                    "description": "Inclui editor de níveis"
+                },
+                {
+                    "id": 14,
+                    "description": "Comentários disponíveis"
+                },
+                {
+                    "id": 41,
+                    "description": "Remote Play no celular"
+                },
+                {
+                    "id": 42,
+                    "description": "Remote Play no tablet"
+                }
+            ],
+            "genres": [
+                {
+                    "id": "1",
+                    "description": "Ação"
+                },
+                {
+                    "id": "37",
+                    "description": "Gratuito p\/ Jogar"
+                }
+            ],
+            "screenshots": [
+                {
+                    "id": 0,
+                    "path_thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/ss_ea21f7bbf4f79bada4554df5108d04b6889d3453.600x338.jpg?t=1695767057",
+                    "path_full": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/ss_ea21f7bbf4f79bada4554df5108d04b6889d3453.1920x1080.jpg?t=1695767057"
+                },
+                {
+                    "id": 1,
+                    "path_thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/ss_e3aedb2ab36bba8cfe611b1e0eaa807e4bb2d742.600x338.jpg?t=1695767057",
+                    "path_full": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/ss_e3aedb2ab36bba8cfe611b1e0eaa807e4bb2d742.1920x1080.jpg?t=1695767057"
+                },
+                {
+                    "id": 2,
+                    "path_thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/ss_ee24a769dc1d81dcbd7b250d16530394adee4264.600x338.jpg?t=1695767057",
+                    "path_full": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/ss_ee24a769dc1d81dcbd7b250d16530394adee4264.1920x1080.jpg?t=1695767057"
+                },
+                {
+                    "id": 3,
+                    "path_thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/ss_9faaa506d91bf19dbb398e0c06a684b337f85f91.600x338.jpg?t=1695767057",
+                    "path_full": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/ss_9faaa506d91bf19dbb398e0c06a684b337f85f91.1920x1080.jpg?t=1695767057"
+                },
+                {
+                    "id": 4,
+                    "path_thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/ss_7de978f22a7059151c31d0488dc57c5c7703c48b.600x338.jpg?t=1695767057",
+                    "path_full": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/ss_7de978f22a7059151c31d0488dc57c5c7703c48b.1920x1080.jpg?t=1695767057"
+                },
+                {
+                    "id": 5,
+                    "path_thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/ss_e79f2490af3247b4b0f8d412d437b72c321cfe3b.600x338.jpg?t=1695767057",
+                    "path_full": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/ss_e79f2490af3247b4b0f8d412d437b72c321cfe3b.1920x1080.jpg?t=1695767057"
+                },
+                {
+                    "id": 6,
+                    "path_thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/ss_8f28c75172e3d08e65222725202b82f58bfe7df7.600x338.jpg?t=1695767057",
+                    "path_full": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/ss_8f28c75172e3d08e65222725202b82f58bfe7df7.1920x1080.jpg?t=1695767057"
+                },
+                {
+                    "id": 7,
+                    "path_thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/0000002574.600x338.jpg?t=1695767057",
+                    "path_full": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/0000002574.1920x1080.jpg?t=1695767057"
+                },
+                {
+                    "id": 8,
+                    "path_thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/0000002575.600x338.jpg?t=1695767057",
+                    "path_full": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/0000002575.1920x1080.jpg?t=1695767057"
+                },
+                {
+                    "id": 9,
+                    "path_thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/0000002576.600x338.jpg?t=1695767057",
+                    "path_full": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/0000002576.1920x1080.jpg?t=1695767057"
+                },
+                {
+                    "id": 10,
+                    "path_thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/0000002577.600x338.jpg?t=1695767057",
+                    "path_full": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/0000002577.1920x1080.jpg?t=1695767057"
+                },
+                {
+                    "id": 11,
+                    "path_thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/0000002578.600x338.jpg?t=1695767057",
+                    "path_full": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/0000002578.1920x1080.jpg?t=1695767057"
+                },
+                {
+                    "id": 12,
+                    "path_thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/0000002579.600x338.jpg?t=1695767057",
+                    "path_full": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/0000002579.1920x1080.jpg?t=1695767057"
+                },
+                {
+                    "id": 13,
+                    "path_thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/0000002580.600x338.jpg?t=1695767057",
+                    "path_full": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/0000002580.1920x1080.jpg?t=1695767057"
+                },
+                {
+                    "id": 14,
+                    "path_thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/0000002581.600x338.jpg?t=1695767057",
+                    "path_full": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/0000002581.1920x1080.jpg?t=1695767057"
+                }
+            ],
+            "movies": [
+                {
+                    "id": 256698790,
+                    "name": "Jungle Inferno",
+                    "thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/256698790\/movie.293x165.jpg?t=1682961253",
+                    "webm": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/256698790\/movie480.webm?t=1682961253",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/256698790\/movie_max.webm?t=1682961253"
+                    },
+                    "mp4": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/256698790\/movie480.mp4?t=1682961253",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/256698790\/movie_max.mp4?t=1682961253"
+                    },
+                    "highlight": true
+                },
+                {
+                    "id": 931,
+                    "name": "Team Fortress 2 Trailer 2",
+                    "thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/931\/movie.jpg?t=1682961246",
+                    "webm": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/931\/movie480.webm?t=1682961246",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/931\/movie_max.webm?t=1682961246"
+                    },
+                    "mp4": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/931\/movie480.mp4?t=1682961246",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/931\/movie_max.mp4?t=1682961246"
+                    },
+                    "highlight": false
+                },
+                {
+                    "id": 5073,
+                    "name": "Team Fortress 2: Meet the Sandvich",
+                    "thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5073\/movie.jpg?t=1682961450",
+                    "webm": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5073\/movie480.webm?t=1682961450",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5073\/movie_max.webm?t=1682961450"
+                    },
+                    "mp4": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5073\/movie480.mp4?t=1682961450",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5073\/movie_max.mp4?t=1682961450"
+                    },
+                    "highlight": false
+                },
+                {
+                    "id": 5051,
+                    "name": "Team Fortress 2: Meet the Sniper",
+                    "thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5051\/movie.293x165.jpg?t=1682961398",
+                    "webm": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5051\/movie480.webm?t=1682961398",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5051\/movie_max.webm?t=1682961398"
+                    },
+                    "mp4": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5051\/movie480.mp4?t=1682961398",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5051\/movie_max.mp4?t=1682961398"
+                    },
+                    "highlight": false
+                },
+                {
+                    "id": 5032,
+                    "name": "Team Fortress 2: Meet the Scout (English)",
+                    "thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5032\/movie.jpg?t=1682961362",
+                    "webm": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5032\/movie480.webm?t=1682961362",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5032\/movie_max.webm?t=1682961362"
+                    },
+                    "mp4": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5032\/movie480.mp4?t=1682961362",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5032\/movie_max.mp4?t=1682961362"
+                    },
+                    "highlight": false
+                },
+                {
+                    "id": 997,
+                    "name": "Team Fortress 2: Meet the Demoman",
+                    "thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/997\/movie.jpg?t=1682961340",
+                    "webm": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/997\/movie480.webm?t=1682961340",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/997\/movie_max.webm?t=1682961340"
+                    },
+                    "mp4": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/997\/movie480.mp4?t=1682961340",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/997\/movie_max.mp4?t=1682961340"
+                    },
+                    "highlight": false
+                },
+                {
+                    "id": 987,
+                    "name": "Team Fortress 2: Meet the Engineer",
+                    "thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/987\/movie.jpg?t=1682961325",
+                    "webm": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/987\/movie480.webm?t=1682961325",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/987\/movie_max.webm?t=1682961325"
+                    },
+                    "mp4": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/987\/movie480.mp4?t=1682961325",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/987\/movie_max.mp4?t=1682961325"
+                    },
+                    "highlight": false
+                },
+                {
+                    "id": 985,
+                    "name": "Team Fortress 2: Meet the Soldier (English)",
+                    "thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/985\/movie.jpg?t=1682961318",
+                    "webm": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/985\/movie480.webm?t=1682961318",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/985\/movie_max.webm?t=1682961318"
+                    },
+                    "mp4": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/985\/movie480.mp4?t=1682961318",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/985\/movie_max.mp4?t=1682961318"
+                    },
+                    "highlight": false
+                },
+                {
+                    "id": 923,
+                    "name": "Team Fortress 2 Trailer",
+                    "thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/923\/movie.jpg?t=1682961303",
+                    "webm": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/923\/movie480.webm?t=1682961303",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/923\/movie_max.webm?t=1682961303"
+                    },
+                    "mp4": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/923\/movie480.mp4?t=1682961303",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/923\/movie_max.mp4?t=1682961303"
+                    },
+                    "highlight": false
+                },
+                {
+                    "id": 960,
+                    "name": "Team Fortress 2: Meet the Heavy",
+                    "thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/960\/movie.jpg?t=1682961310",
+                    "webm": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/960\/movie480.webm?t=1682961310",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/960\/movie_max.webm?t=1682961310"
+                    },
+                    "mp4": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/960\/movie480.mp4?t=1682961310",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/960\/movie_max.mp4?t=1682961310"
+                    },
+                    "highlight": false
+                },
+                {
+                    "id": 5734,
+                    "name": "TF2 Mac Trailer",
+                    "thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5734\/movie.293x165.jpg?t=1682961296",
+                    "webm": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5734\/movie480.webm?t=1682961296",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5734\/movie_max.webm?t=1682961296"
+                    },
+                    "mp4": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5734\/movie480.mp4?t=1682961296",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5734\/movie_max.mp4?t=1682961296"
+                    },
+                    "highlight": false
+                },
+                {
+                    "id": 80924,
+                    "name": "Team Fortress 2 Free to Play",
+                    "thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/80924\/movie.293x165.jpg?t=1682961289",
+                    "webm": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/80924\/movie480.webm?t=1682961289",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/80924\/movie_max.webm?t=1682961289"
+                    },
+                    "mp4": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/80924\/movie480.mp4?t=1682961289",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/80924\/movie_max.mp4?t=1682961289"
+                    },
+                    "highlight": false
+                },
+                {
+                    "id": 80923,
+                    "name": "Team Fortress 2: Meet The Medic",
+                    "thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/80923\/movie.293x165.jpg?t=1682961282",
+                    "webm": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/80923\/movie480.webm?t=1682961282",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/80923\/movie_max.webm?t=1682961282"
+                    },
+                    "mp4": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/80923\/movie480.mp4?t=1682961282",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/80923\/movie_max.mp4?t=1682961282"
+                    },
+                    "highlight": false
+                },
+                {
+                    "id": 81800,
+                    "name": "Meet the Pyro - TF2",
+                    "thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/81800\/movie.293x165.jpg?t=1682961275",
+                    "webm": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/81800\/movie480.webm?t=1682961275",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/81800\/movie_max.webm?t=1682961275"
+                    },
+                    "mp4": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/81800\/movie480.mp4?t=1682961275",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/81800\/movie_max.mp4?t=1682961275"
+                    },
+                    "highlight": false
+                },
+                {
+                    "id": 81943,
+                    "name": "Mann vs Machine_Trailer",
+                    "thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/81943\/movie.293x165.jpg?t=1682961267",
+                    "webm": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/81943\/movie480.webm?t=1682961267",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/81943\/movie_max.webm?t=1682961267"
+                    },
+                    "mp4": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/81943\/movie480.mp4?t=1682961267",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/81943\/movie_max.mp4?t=1682961267"
+                    },
+                    "highlight": false
+                },
+                {
+                    "id": 2030252,
+                    "name": "Mann vs. Machine - The Sound of Medicine",
+                    "thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/2030252\/movie.293x165.jpg?t=1682961260",
+                    "webm": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/2030252\/movie480.webm?t=1682961260",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/2030252\/movie_max.webm?t=1682961260"
+                    },
+                    "mp4": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/2030252\/movie480.mp4?t=1682961260",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/2030252\/movie_max.mp4?t=1682961260"
+                    },
+                    "highlight": false
+                },
+                {
+                    "id": 5260,
+                    "name": "Team Fortress 2: Meet the Spy",
+                    "thumbnail": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5260\/movie.293x165.jpg?t=1682961477",
+                    "webm": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5260\/movie480.webm?t=1682961477",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5260\/movie_max.webm?t=1682961477"
+                    },
+                    "mp4": {
+                        "480": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5260\/movie480.mp4?t=1682961477",
+                        "max": "http:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/5260\/movie_max.mp4?t=1682961477"
+                    },
+                    "highlight": false
+                }
+            ],
+            "recommendations": {
+                "total": 23729
+            },
+            "achievements": {
+                "total": 520,
+                "highlighted": [
+                    {
+                        "name": "Primeiro da Classe",
+                        "path": "https:\/\/cdn.akamai.steamstatic.com\/steamcommunity\/public\/images\/apps\/440\/tf_play_game_everyclass.jpg"
+                    },
+                    {
+                        "name": "Volta ao Mundo",
+                        "path": "https:\/\/cdn.akamai.steamstatic.com\/steamcommunity\/public\/images\/apps\/440\/tf_play_game_everymap.jpg"
+                    },
+                    {
+                        "name": "Médico da Equipe",
+                        "path": "https:\/\/cdn.akamai.steamstatic.com\/steamcommunity\/public\/images\/apps\/440\/tf_get_healpoints.jpg"
+                    },
+                    {
+                        "name": "Mandando Brasa",
+                        "path": "https:\/\/cdn.akamai.steamstatic.com\/steamcommunity\/public\/images\/apps\/440\/tf_burn_playersinminimumtime.jpg"
+                    },
+                    {
+                        "name": "Sentineleiro",
+                        "path": "https:\/\/cdn.akamai.steamstatic.com\/steamcommunity\/public\/images\/apps\/440\/tf_get_turretkills.jpg"
+                    },
+                    {
+                        "name": "V de Vinganças",
+                        "path": "https:\/\/cdn.akamai.steamstatic.com\/steamcommunity\/public\/images\/apps\/440\/tf_kill_nemesis.jpg"
+                    },
+                    {
+                        "name": "Duro de Matar",
+                        "path": "https:\/\/cdn.akamai.steamstatic.com\/steamcommunity\/public\/images\/apps\/440\/tf_get_consecutivekills_nodeaths.jpg"
+                    },
+                    {
+                        "name": "Mestre do Disfarce",
+                        "path": "https:\/\/cdn.akamai.steamstatic.com\/steamcommunity\/public\/images\/apps\/440\/tf_get_healed_byenemy.jpg"
+                    },
+                    {
+                        "name": "Com Amigos Como Esses...",
+                        "path": "https:\/\/cdn.akamai.steamstatic.com\/steamcommunity\/public\/images\/apps\/440\/tf_play_game_friendsonly.jpg"
+                    },
+                    {
+                        "name": "Dinastia",
+                        "path": "https:\/\/cdn.akamai.steamstatic.com\/steamcommunity\/public\/images\/apps\/440\/tf_win_multiplegames.jpg"
+                    }
+                ]
+            },
+            "release_date": {
+                "coming_soon": false,
+                "date": "10\/out.\/2007"
+            },
+            "support_info": {
+                "url": "http:\/\/steamcommunity.com\/app\/440",
+                "email": ""
+            },
+            "background": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/page_bg_generated_v6b.jpg?t=1695767057",
+            "background_raw": "https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/440\/page.bg.jpg?t=1695767057",
+            "content_descriptors": {
+                "ids": [
+                    2,
+                    5
+                ],
+                "notes": "Includes cartoon violence and gore."
+            }
+        }
+    }
+}

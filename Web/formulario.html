@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: aliceblue;
+        }
+        .box{
+            background-color: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 15px;
+            border-radius: 15px;
+            color: white;
+        }
+        legend{
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+            background-color: aliceblue;
+            border-radius: 5px;
+            color: black;
+        }
+        .inputBox{
+            position: relative;
+        }
+        .inputUser{
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            color: white;
+            font-size: 15px;
+            width: 100%;   
+        }
+        #data_nasc{
+            border:none;
+            padding: 8px;
+            border-radius: 10px;
+            outline: none;
+            cursor: pointer;
+        }
+        #submit{
+            background-color: gray;
+            border: none;
+            color: black;
+            font-size: 15px;
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            cursor:pointer;
+        }
+        #submit:hover{
+            background-color: darkgray;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!-- <form action=""> -->
+            <fieldset>
+                <legend><b>Formulário</b></legend>
+                <br>
+                <div class="inputBox">
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    </div>
+                    <br>
+                    <div class="inputBox">
+                        <label for="senha">Senha:</label><br>
+                        <input type="password" id= "senha" name="senha" class="inputUser" required>
+                        <br>
+                    <br>
+                    <div class="inputBox">
+                        <label for="email">Email:</label>
+                        <br>
+                        <input type="email" name="email" id="email" class="inputUser" required>
+                    </div>
+                    <br>
+                    <!--<p><b>Gênero</b></p>
+                    <input type="radio" id="feminino" name="genero" value="feminino" >
+                    <label for="feminino">Feminino</label>
+                    <br>
+                    <input type="radio" id="masculino" name="genero" value="masculino" >
+                    <label for="masculino">Masculino</label>
+                    <br>
+                    <input type="radio" id="outro" name="genero" value="outro" >
+                    <label for="outro">Outro</label>
+                    <br><br>
+                    <div class="inputBox">
+                        <label for="numero"><b>Data de Nascimento</b></label><br><br>
+                        <input type="date" name="data_nasc" id="data_nasc" class="data_nasc" >    
+                    </div> -->
+                    <br>
+                    <!-- <input type="submit" id="submit" name="submit" required> -->
+                    <button id="botaoEnviar">Enviar</button>
+                    <br>
+                    <p class="signup-link"> <a href="log-user.html">Voltar ao Login</a></p>
+            </fieldset>
+        <!-- </form> -->
+    </div>
+    <script>
+        document.getElementById('botaoEnviar').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get form data
+            const formData = {
+                name: document.getElementById('nome').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('senha').value,
+                // Add other form fields as needed
+            };
+
+            // Make a POST request using fetch
+            console.log(document.getElementById("nome").value + " " + document.getElementById("senha").value)
+            fetch('http://26.183.131.5:3000/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Success:', data);
+                // Handle the successful response here
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle errors here
+            });
+        });
+    </script>
+</body>
+</html>
