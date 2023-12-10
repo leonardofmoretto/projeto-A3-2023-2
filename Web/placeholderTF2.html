@@ -8,52 +8,59 @@
 </head>
 
 <body>
-    <input type="text" id="txtGame" placeholder="Enter Game ID">
-    <button onclick="consultarGame()">Consultar</button>
+    <!--<input type="text" id="txtGame" placeholder="Enter Game ID"> -->
+    <!--<button onclick="consultarGame()">Consultar</button> -->
 
     <div id="informacoes"></div>
 
     <script>
         let listagem = document.getElementById("informacoes");
 
-        function consultarGame() {
-            //let gameId = document.getElementById("txtGame").value;
-            let gameId = "440";
-            fetch("tf2.json")
-                .then((response) => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then((dados) => {
-                    console.log(dados);
+        //function consultarGame() {
+        //const urlParams = new URLSearchParams(window.location.search);
+        //const appId = urlParams.get('appid');
+        let gameId = "440"//document.getElementById("txtGame").value;
+        fetch("tf2.json")
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then((dados) => {
+                console.log(dados);
 
-                    const gameData = dados[gameId]?.data;
+                const gameData = dados[gameId].data;
 
-                    if (!gameData) {
-                        listagem.innerHTML = `<p> Não achamos esse jogo :( </p>`;
-                        return;
-                    }
+                if (!gameData) {
+                    listagem.innerHTML = `<p> Não achamos esse jogo :( </p>`;
+                    return;
+                }
 
-                    listagem.innerHTML = `
+                const genres = gameData.genres.map(genre => genre.description); //Array com as descriçoes de gênero.
+
+                listagem.innerHTML = `
                         <h2>${gameData.name}</h2>
                         <h5>DEVELOPER: ${gameData.developers}</h3>
                         <h5>PUBLISHER: ${gameData.publishers}</h3>
-                        <h5>Genres: ${gameData.genres[0].description}</h5>
+                        <h5>Genres: ${genres.join(', ')}</h5>
                         <img src="${gameData.header_image}" alt="Game Image"></img>
-                        <h4>${gameData.detailed_description}</h4>
+                        <h4>${gameData.detailed_description}</h4><br>
                         <video controls width="640" height="360">
                             <source src="${gameData.movies[0]?.mp4?.max}" type="video/mp4">
                         </video>
                     `;
-                })
-                .catch((error) => {
-                    console.error('Error fetching game details:', error);
-                    listagem.innerHTML = `<p>Error fetching game details</p>`;
-                });
+            })
+            .catch((error) => {
+                console.error('Error fetching game details:', error);
+                listagem.innerHTML = `<p>Error fetching game details</p>`;
+            });
+        //}
+        function goBack() {
+            window.history.back();
         }
     </script>
+    <button onclick="goBack()">Voltar</button>
 </body>
 
 </html>
