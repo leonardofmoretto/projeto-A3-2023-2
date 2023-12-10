@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Details</title>
+</head>
+
+<body>
+    <input type="text" id="txtGame" placeholder="Enter Game ID">
+    <button onclick="consultarGame()">Consultar</button>
+
+    <div id="informacoes"></div>
+
+    <script>
+        let listagem = document.getElementById("informacoes");
+
+        function consultarGame() {
+            //let gameId = document.getElementById("txtGame").value;
+            let gameId = "440";
+            fetch("tf2.json")
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then((dados) => {
+                    console.log(dados);
+
+                    const gameData = dados[gameId]?.data;
+
+                    if (!gameData) {
+                        listagem.innerHTML = `<p> Não achamos esse jogo :( </p>`;
+                        return;
+                    }
+
+                    listagem.innerHTML = `
+                        <h2>${gameData.name}</h2>
+                        <h5>DEVELOPER: ${gameData.developers}</h3>
+                        <h5>PUBLISHER: ${gameData.publishers}</h3>
+                        <h5>Genres: ${gameData.genres[0].description}</h5>
+                        <img src="${gameData.header_image}" alt="Game Image"></img>
+                        <h4>${gameData.detailed_description}</h4>
+                        <video controls width="640" height="360">
+                            <source src="${gameData.movies[0]?.mp4?.max}" type="video/mp4">
+                        </video>
+                    `;
+                })
+                .catch((error) => {
+                    console.error('Error fetching game details:', error);
+                    listagem.innerHTML = `<p>Error fetching game details</p>`;
+                });
+        }
+    </script>
+</body>
+
+</html>
