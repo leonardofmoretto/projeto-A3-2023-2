@@ -9,7 +9,7 @@
 
 <body>
   <input type="text" id="textBox">
-  <button id="btn">Oi</button>
+  <button id="btn">Procurar jogo</button>
   <div id="outro">
 
   </div>
@@ -41,7 +41,7 @@
             }
           });
           matchingObjects.forEach(app => {
-            document.getElementById("outro").innerHTML += `${app.name} - ${app.appid} <br>`;
+            document.getElementById("outro").innerHTML += `<a href="montaPage.html?appid=${app.appid}">${app.name} </a><br>`;
           });
           console.log(matchingObjects);
         })
