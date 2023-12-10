@@ -30,14 +30,14 @@
             .then((dados) => {
                 console.log(dados);
 
-                const gameData = dados[gameId]?.data;
+                const gameData = dados[gameId].data; //
 
                 if (!gameData) {
                     listagem.innerHTML = `<p> Não achamos esse jogo :( </p>`;
                     return;
                 }
 
-                const genres = gameData.genres.map(genre => genre.description);
+                const genres = gameData.genres.map(genre => genre.description); //Array com as descriçoes de gênero.
 
                 listagem.innerHTML = `
                         <h2>${gameData.name}</h2>
