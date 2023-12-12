@@ -14,14 +14,15 @@
 
   </div>
   <script>
-    let filePath = 'api.steampowered.com.json';
+    
 
     let btn = document.getElementById("btn");
     let textBox = document.getElementById("textBox");
-
+    
     btn.addEventListener('click', searchJson);
 
     function searchJson() {
+      let filePath = `http://localhost:3000/games/gameName?name=${textBox.value}`;
       document.getElementById("outro").innerHTML = "";
       
       // Fetch the JSON file asynchronously
@@ -30,20 +31,14 @@
           if (!response.ok) {
             throw new Error(`Failed to fetch ${filePath}: ${response.status} ${response.statusText}`);
           }
+          // Return the JSON promise to the next then block
           return response.json();
         })
         .then(jsonData => {
-          const matchingObjects = [];
-          searchWord = textBox.value;
-          jsonData.applist.apps.forEach(app => {
-            if (app.name.toLowerCase().includes(searchWord.toLowerCase())) {
-              matchingObjects.push(app);
-            }
-          });
-          matchingObjects.forEach(app => {
+          console.log(jsonData);
+          jsonData.forEach(app => {
             document.getElementById("outro").innerHTML += `<a href="montaPage.html?appid=${app.appid}">${app.name} </a><br>`;
           });
-          console.log(matchingObjects);
         })
         .catch(error => {
           console.error('Error fetching or parsing JSON file:', error);
