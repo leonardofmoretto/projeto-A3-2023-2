@@ -56,6 +56,30 @@
         <button>Enviar</button>
         <p class="signup-link"> <a href="log-user.html">Logar como Usuario</a></p>
     </div>
+    <script>
+        async function login() {
+            const email = document.getElementById('emailInput').value;
+            const senha = document.getElementById('senhaInput').value;
+
+            try {
+                const response = await fetch('http://localhost:3000/users');
+                const data = await response.json();
+
+                const usuarioEncontrado = data.find(user => item.email === email && item.password === senha);
+
+                if (usuarioEncontrado) {
+                    alert('Login bem-sucedido!');
+                    // Aqui você pode redirecionar para outra página após o login ser bem-sucedido
+                    window.location.href = 'pagina-de-sucesso.html';
+                } else {
+                    alert('Credenciais inválidas. Tente novamente.');
+                }
+            } catch (error) {
+                console.error('Erro ao buscar usuários:', error);
+                alert('Ocorreu um erro. Tente novamente mais tarde.');
+            }
+        }
+    </script>
 </body>
 
 </html>

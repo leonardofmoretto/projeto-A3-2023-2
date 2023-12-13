@@ -100,7 +100,7 @@
                 password: document.getElementById('senha').value,
             };
 
-            console.log(document.getElementById("nome").value + " " + document.getElementById("senha").value)
+            console.log(document.getElementById("nome").value + document.getElementById("email").value + document.getElementById("senha").value)
             fetch('http://localhost:3000/users', {
                 method: 'POST',
                 headers: {
