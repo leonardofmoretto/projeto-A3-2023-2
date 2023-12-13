@@ -20,7 +20,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const appId = urlParams.get('appid');
         let gameId = appId//document.getElementById("txtGame").value;
-        fetch(`http://26.183.131.5:3000/games/gameId?id=${gameId}`)
+        fetch(`http://localhost:3000/games/gameId?id=${gameId}`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

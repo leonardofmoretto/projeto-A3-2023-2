@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <button id="create">Criar</button>
+    <button id="read">Ler</button>
+    <button id="update">Update</button>
+    <button id="delete">Deletar</button>
+    
+    <script>
+        let r = document.querySelector('#read');
+        let u = document.querySelector('#update');
+        let d = document.querySelector('#delete');
+
+        r.addEventListener('click', () => {
+            fetch('http://localhost:3000/users')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            })
+            .catch(error => console.log(error));
+        });
+
+        u.addEventListener('click', () => {
+            console.log('editar no banco de dados')
+        });
+
+        d.addEventListener('click', () => {
+            console.log('deletar no banco de dados')
+        });
+
+
+
+
+    </script>
+</body>
+</html>
