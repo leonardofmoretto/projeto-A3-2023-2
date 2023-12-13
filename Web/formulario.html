@@ -86,7 +86,7 @@
                     <br>
                     <button id="botaoEnviar">Enviar</button>
                     <br>
-                    <p class="signup-link"> <a href="log-user.html">Voltar ao Login</a></p>
+                    <button onclick="goBack()">Voltar</button>
             </fieldset>
     </div>
     <script>
@@ -103,12 +103,19 @@
             console.log(document.getElementById("nome").value + " " + document.getElementById("senha").value)
             fetch('http://localhost:3000/users', {
                 method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
                 body: JSON.stringify(formData),
             })
-            .then(response =>  response.json()) // converte para json
+            .then(response =>  response.json(alert('Usuário cadastrado com sucesso'),location.reload())) // converte para json
             .then(data => console.log(data)) // acessa os dados
             .catch(error => console.error(error)); // trata os erros
         });
+
+        function goBack() {
+            window.history.back();
+        }
     </script>
 </body>
 </html>
