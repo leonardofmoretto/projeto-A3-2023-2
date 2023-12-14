@@ -9,23 +9,44 @@
 </head>
 
 <body>
+  <button id="btn_user">Perfil</button><br>
   <input type="text" id="textBox">
-  <button id="btn">Procurar jogo</button>
+  <button id="btn_pesquisar">Procurar jogo</button>
   <div id="outro">
 
   </div>
   <script>
-    
 
-    let btn = document.getElementById("btn");
+    const btnPesquisar = document.getElementById("btn_pesquisar");
+    btnPesquisar.addEventListener('click', searchJson);
+
     let textBox = document.getElementById("textBox");
-    
-    btn.addEventListener('click', searchJson);
+    const userID = localStorage.getItem('userID');
+
+    const btnUser = document.getElementById("btn_user");
+    btnUser.addEventListener('click', acessoUser);
+
+    if (userID) {
+      // Use o ID do usuário como necessário na página
+      console.log('ID do usuário logado:', userID);
+    } else {
+      // Lidar com o caso em que o userID não está presente
+      console.log('ID do usuário não encontrado.');
+    }
+
+    function acessoUser() {
+      if (userID) {
+        window.location.href = 'perfil.html';
+      } else {
+        alert('ID do usuário não encontrado.');
+      }
+    }
+
 
     function searchJson() {
       let filePath = `http://localhost:3000/games/gameName?name=${textBox.value}`;
       document.getElementById("outro").innerHTML = "";
-      
+
       // Fetch the JSON file asynchronously
       fetch(filePath)
         .then(response => {

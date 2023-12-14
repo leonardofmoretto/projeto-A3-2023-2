@@ -11,7 +11,7 @@
     <button id="Cadastrar"> <a href="formulario.html">Cadastrar Usuário</a></button><br>
     <button id="signup-link"> <a href="log-user.html">Voltar a tela de login</a></button>
     <script>
-        const dadosDiv = document.querySelector('#dados');
+        const dadosDiv = document.getElementById('dados');
 
         function carregarUsuarios() {
             fetch('http://localhost:3000/users')

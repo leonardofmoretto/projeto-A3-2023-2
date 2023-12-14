@@ -15,15 +15,15 @@ export class UsersService {
   async findAll(): Promise<User[]> {
     const users = await this.userRepository.find();
 
-    users.forEach(user => {
-      delete user.password;
-    });
+    //users.forEach(user => {
+      //delete user.password;
+    //});
 
     return users;
   }
   async findOne(id: number): Promise<User> {
     const user = await this.userRepository.findOneBy({ 'id': id });
-    delete user.password;
+    //delete user.password;
     return user;
   }
   async create(userData: Partial<User>): Promise<User> {

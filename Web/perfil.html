@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="info">
+        oioiioi
+
+    </div>
+    <div id="favoritos">
+
+
+    </div>
+
+    <script>
+        const userID = localStorage.getItem('userID');
+        console.log('ID do usuário logado:', userID);
+
+        fetch(`http://localhost:3000/users/${userID}`)
+            .then(response => response.json())
+            .then(item => {
+                    console.log(item.name);
+                    console.log(item.email);
+                    const infoDiv = document.getElementById('info');
+                    infoDiv.innerHTML = `
+                        <p>Nome: ${item.name} </p> 
+                        <p>Email: ${item.email}</p>
+                    `;             
+                    item.favoriteAppIds.array.forEach(idJogo => {
+                        console.log(idJogo);
+                        puxaFav(idJogo);
+                    });
+                    
+                })
+        
+        function puxaFav(idFavorito) {
+            fetch(`http://localhost:3000/games/gameId?id=${idFavorito}`)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Não conseguimos acessar a API, verifique a rede.');
+                }
+                return response.json();
+            })
+            .then((dados) => {
+                console.log(dados);
+
+                const gameData = dados[idFavorito].data;
+
+                if (!gameData) {
+                    listagem.innerHTML = `<p> Não achamos esse jogo :( </p>`;
+                    return;
+                }
+                const divFav = document.getElementById("favoritos");
+
+                divFav.innerHTML = `
+                        <h2>${gameData.name}</h2>
+                        <img src="${gameData.header_image}" alt="Game Image"></img>
+                        <h4>${gameData.detailed_description}</h4><br>
+                        <video controls width="640" height="360">
+                            <source src="${gameData.movies[0]?.mp4?.max}" type="video/mp4">
+                        </video>
+                    `;
+            })
+            .catch((error) => {
+                console.error('Error fetching game details:', error);
+                listagem.innerHTML = `<p>Não conseguimos achar os dados desse jogo :( </p>`;
+            });
+        }
+
+    </script>
+</body>
+
+</html>

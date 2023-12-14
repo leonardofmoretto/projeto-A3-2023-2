@@ -10,6 +10,7 @@
     body {
         font-family: Arial, Helvetica, sans-serif;
         background-color: aliceblue;
+        text-align: center;
     }
 
     div {
@@ -49,6 +50,7 @@
 <body>
     <div>
         <h1>Login</h1>
+        <h1>Procura-Game</h1>
         <input type="text" id="emailInput" placeholder="Email">
         <BR><BR>
         <input type="password" id="senhaInput" placeholder="Senha">
@@ -67,12 +69,12 @@
                 const response = await fetch('http://localhost:3000/users');
                 const data = await response.json();
 
-                const usuarioEncontrado = data.find(item => item.email === email && item.name === senha);
-
+                const usuarioEncontrado = data.find(item => item.email === email && item.password === senha);
+                console.log(usuarioEncontrado.id);
                 if (usuarioEncontrado) {
                     alert('Login bem-sucedido!');
-                    // Aqui você pode redirecionar para outra página após o login ser bem-sucedido
-                    window.location.href = 'pagina-de-sucesso.html';
+                    localStorage.setItem('userID', usuarioEncontrado.id); //salva no cache o id do usuario
+                    window.location.href = 'buscaJogos.html';
                 } else {
                     alert('Credenciais inválidas. Tente novamente.');
                 }
