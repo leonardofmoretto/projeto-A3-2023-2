@@ -4,64 +4,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Details</title>
+    <title>Detalhes do Jogo</title>
     <link rel="stylesheet" href="styleA3.css">
 </head>
 
 <body>
-    <!--<input type="text" id="txtGame" placeholder="Enter Game ID"> -->
-    <!--<button onclick="consultarGame()">Consultar</button> -->
-
     <div id="informacoes"></div>
 
     <script>
-        let listagem = document.getElementById("informacoes");
-
-        //function consultarGame() {
+        const userID = localStorage.getItem('userID');
+        const listagem = document.getElementById("informacoes");
         const urlParams = new URLSearchParams(window.location.search);
         const appId = urlParams.get('appid');
-        let gameId = appId//document.getElementById("txtGame").value;
-        fetch(`http://localhost:3000/games/gameId?id=${gameId}`)
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Não conseguimos acessar a API, verifique a rede.');
-                }
-                return response.json();
-            })
-            .then((dados) => {
-                console.log(dados);
+        const gameId = appId;
 
-                const gameData = dados[gameId].data;
+        if (userID) {
+            console.log('ID do usuário logado:', userID);
+        } else {
+            console.log('ID do usuário não encontrado.');
+        }
 
-                if (!gameData) {
-                    listagem.innerHTML = `<p> Não achamos esse jogo :( </p>`;
-                    return;
-                }
+        //function consultarGame() {
 
-                const genres = gameData.genres.map(genre => genre.description); //Array com as descriçoes de gênero.
+            fetch(`http://localhost:3000/games/gameId?id=${gameId}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Não foi possível acessar a API. Verifique a conexão.');
+                    }
+                    return response.json();
+                })
+                .then(dados => {
+                    const gameData = dados[gameId]?.data;
 
-                listagem.innerHTML = `
+                    if (!gameData) {
+                        listagem.innerHTML = `<p>Jogo não encontrado.</p>`;
+                        return;
+                    }
+
+                    const genres = gameData.genres.map(genre => genre.description);
+
+                    listagem.innerHTML = `
                         <h2>${gameData.name}</h2>
-                        <h5>Desenvolvedora: ${gameData.developers}</h3>
-                        <h5>Distribuidora: ${gameData.publishers}</h3>
+                        <h5>Desenvolvedora: ${gameData.developers}</h5>
+                        <h5>Distribuidora: ${gameData.publishers}</h5>
                         <h5>Gênero: ${genres.join(', ')}</h5>
-                        <img src="${gameData.header_image}" alt="Game Image"></img>
+                        <img src="${gameData.header_image}" alt="Imagem do Jogo">
                         <h4>${gameData.detailed_description}</h4><br>
                         <video controls width="640" height="360">
                             <source src="${gameData.movies[0]?.mp4?.max}" type="video/mp4">
                         </video>
                     `;
-            })
-            .catch((error) => {
-                console.error('Error fetching game details:', error);
-                listagem.innerHTML = `<p>Não conseguimos achar os dados desse jogo :( </p>`;
-            });
+                })
+                .catch(error => {
+                    console.error('Erro ao obter detalhes do jogo:', error);
+                    listagem.innerHTML = `<p>Não foi possível obter os detalhes do jogo.</p>`;
+                });
         //}
-        function goBack() {
-            window.history.back();
+
+        function pegaDadosUsuario() {
+            return fetch(`http://localhost:3000/users/${userID}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erro ao obter dados do usuário.');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data.favoriteAppIds);
+                    const novosDados = [...data.favoriteAppIds, gameId];
+                    console.log(novosDados);
+                    return novosDados;
+                })
+                .catch(error => {
+                    console.error('Erro ao obter dados do usuário:', error);
+                    return []; // Retorna uma lista vazia em caso de erro
+                });
         }
+
+        function updateFavoriteAppIds(userID, newFavoriteAppIds) {
+            fetch(`http://localhost:3000/users/${userID}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    favoriteAppIds: newFavoriteAppIds.map(id => parseInt(id, 10)),
+                }),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erro ao atualizar favoriteAppIds.');
+                    }
+                    return response.json();
+                })
+                .then(updatedUser => {
+                    console.log('favoriteAppIds atualizado:', updatedUser.favoriteAppIds);
+                })
+                .catch(error => {
+                    console.error('Erro ao atualizar favoriteAppIds:', error);
+                });
+        }
+
+        function favoritarJogo() {
+            pegaDadosUsuario()
+                .then(newFavoriteAppIds => {
+                    updateFavoriteAppIds(userID, newFavoriteAppIds);
+                })
+                .catch(error => {
+                    console.error('Erro ao favoritar o jogo:', error);
+                });
+        }
+
+        //consultarGame(); // Chama a função automaticamente ao carregar a página
     </script>
+
     <button onclick="goBack()">Voltar</button>
+    <button onclick="favoritarJogo()">Favoritar</button>
+
 </body>
 
 </html>

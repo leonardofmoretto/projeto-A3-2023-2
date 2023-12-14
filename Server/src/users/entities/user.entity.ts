@@ -15,7 +15,7 @@ export class User {
     @Column({default:'blankPassword'})
     password: string;
 
-    @Column({nullable: true, type: 'json'})
+    @Column({nullable: false, type: 'json'})
     favoriteAppIds: any; //ver como colocar array de appIds
     
 

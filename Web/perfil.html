@@ -10,67 +10,100 @@
 <body>
     <div id="info">
         oioiioi
-
     </div>
-    <div id="favoritos">
-
-
-    </div>
+    <div id="favoritos"></div>
 
     <script>
         const userID = localStorage.getItem('userID');
         console.log('ID do usuário logado:', userID);
 
-        fetch(`http://localhost:3000/users/${userID}`)
-            .then(response => response.json())
-            .then(item => {
-                    console.log(item.name);
-                    console.log(item.email);
-                    const infoDiv = document.getElementById('info');
-                    infoDiv.innerHTML = `
-                        <p>Nome: ${item.name} </p> 
-                        <p>Email: ${item.email}</p>
-                    `;             
-                    item.favoriteAppIds.array.forEach(idJogo => {
-                        console.log(idJogo);
-                        puxaFav(idJogo);
-                    });
-                    
-                })
-        
-        function puxaFav(idFavorito) {
-            fetch(`http://localhost:3000/games/gameId?id=${idFavorito}`)
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Não conseguimos acessar a API, verifique a rede.');
-                }
-                return response.json();
-            })
-            .then((dados) => {
-                console.log(dados);
-
-                const gameData = dados[idFavorito].data;
-
-                if (!gameData) {
-                    listagem.innerHTML = `<p> Não achamos esse jogo :( </p>`;
-                    return;
-                }
-                const divFav = document.getElementById("favoritos");
-
-                divFav.innerHTML = `
-                        <h2>${gameData.name}</h2>
-                        <img src="${gameData.header_image}" alt="Game Image"></img>
-                        <h4>${gameData.detailed_description}</h4><br>
-                        <video controls width="640" height="360">
-                            <source src="${gameData.movies[0]?.mp4?.max}" type="video/mp4">
-                        </video>
-                    `;
-            })
-            .catch((error) => {
-                console.error('Error fetching game details:', error);
-                listagem.innerHTML = `<p>Não conseguimos achar os dados desse jogo :( </p>`;
-            });
+        function fetchUserData(userID) {
+            return fetch(`http://localhost:3000/users/${userID}`).then(response => response.json());
         }
+
+        function fetchGameData(idFavorito) {
+            return fetch(`http://localhost:3000/games/gameId?id=${idFavorito}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Não conseguimos acessar a API, verifique a rede.');
+                    }
+                    return response.json();
+                })
+                .then(data => data[idFavorito].data)
+                .catch(error => {
+                    console.error('Error fetching game details:', error);
+                    return null;
+                });
+        }
+
+        function createGameElement(gameData, idFavorito) {
+            const divFav = document.getElementById("favoritos");
+
+            const gameElement = document.createElement('div');
+            gameElement.innerHTML = `
+        <h3>${gameData.name}</h3>
+        <img src="${gameData.capsule_imagev5}" alt="Game Image"></img> 
+        <button class="delete-btn" data-id="${idFavorito}">Delete</button>
+    `;
+
+            divFav.appendChild(gameElement);
+        }
+
+        function updateFavoriteAppIds(userID, newFavoriteAppIds) {
+            // Atualiza o array favoriteAppIds no servidor
+            fetch(`http://localhost:3000/users/${userID}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    favoriteAppIds: newFavoriteAppIds.map(id => parseInt(id, 10)), // Certifica-se de que os IDs são números
+                }),
+            })
+                .then(response => response.json())
+                .then(updatedUser => {
+                    console.log('favoriteAppIds atualizado:', updatedUser.favoriteAppIds);
+                })
+                .catch(error => {
+                    console.error('Erro ao atualizar favoriteAppIds:', error);
+                });
+        }
+
+        fetchUserData(userID)
+            .then(user => {
+                const infoDiv = document.getElementById('info');
+                infoDiv.innerHTML = `<p>Nome: ${user.name}</p><p>Email: ${user.email}</p>`;
+
+                user.favoriteAppIds.forEach(idJogo => {
+                    fetchGameData(idJogo).then(gameData => {
+                        if (gameData) {
+                            createGameElement(gameData, idJogo);
+                        } else {
+                            const divFav = document.getElementById("favoritos");
+                            divFav.innerHTML = `<p>Não conseguimos achar os dados desse jogo :(</p>`;
+                        }
+                    });
+                });
+
+                // Adiciona o manipulador de eventos fora do loop
+                document.getElementById("favoritos").addEventListener('click', (event) => {
+                    const deleteBtn = event.target;
+                    if (deleteBtn.classList.contains('delete-btn')) {
+                        const idFavorito = deleteBtn.getAttribute('data-id');
+
+                        // Atualiza o array favoriteAppIds removendo o ID clicado
+                        const novosDados = user.favoriteAppIds.filter(item => item !== parseInt(idFavorito, 10));
+                        console.log('Novos dados (IDs removidos):', novosDados);
+
+                        // Chama a função para atualizar o array no servidor
+                        updateFavoriteAppIds(userID, novosDados);
+
+                        // Remove o elemento do DOM
+                        location.reload();
+                        //deleteBtn.parentNode.remove();
+                    }
+                });
+            });
 
     </script>
 </body>
