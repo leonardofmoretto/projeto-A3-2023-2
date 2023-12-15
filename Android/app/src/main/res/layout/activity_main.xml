@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/tv_titulo"
         android:layout_width="wrap_content"
@@ -20,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_busca"
+        android:id="@+id/et_nomeJogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -38,9 +39,10 @@
         android:text="Buscar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_busca" />
+        app:layout_constraintTop_toBottomOf="@+id/et_nomeJogo" />
 
     <ScrollView
+        android:id="@+id/sv_scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="40dp"
@@ -50,6 +52,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_buscar">
 
         <LinearLayout
+            android:id="@+id/ln_linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
