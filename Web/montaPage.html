@@ -113,9 +113,12 @@
                 .catch(error => {
                     console.error('Erro ao favoritar o jogo:', error);
                 });
-        }
+                alert('Jogo adicionado aos favoritos.');
 
-        //consultarGame(); // Chama a função automaticamente ao carregar a página
+        }
+        function goBack() {
+            window.history.back();
+        }
     </script>
 
     <button onclick="goBack()">Voltar</button>
