@@ -1,0 +1,75 @@
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    gap: 20px;
+    padding-left: 20px;
+    text-align: center;
+}
+
+#info {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 80%;
+    text-align: left;
+}
+
+    #favoritos {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 80%;
+    }
+
+    #favoritos>div {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #favoritos img {
+        border-radius: 5px;
+        order: -1;
+    }
+
+    .delete-btn, #sair {
+        background-color: #ff4444;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        margin-left: auto;
+    }
+
+    .delete-btn:hover, #sair:hover {
+        background-color: #ff0000;
+    }
+
+    #Sair,
+    #Voltar {
+        background-color: #4CAF50;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        margin-left: center;
+        
+    }
+
+    #Sair:hover,
+    #Voltar:hover {
+        position: center;
+        background-color: #45a049;
+    }
+     h1{
+        width: 80%;
+        text-align: left;
+     }

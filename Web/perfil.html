@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/perfil.css">
 </head>
-
 <body>
-    <div id="info">
-        oioiioi
-    </div>
+    <div id="info"> </div>
+    <button id = "Sair" onclick="goHome()">Sair</button>
+    <h1>Jogos favoritados:</h1>
     <div id="favoritos"></div>
+    <button id = "Voltar" onclick="goBack()">Voltar</button>
 
     <script>
         const userID = localStorage.getItem('userID');
@@ -88,7 +89,10 @@
                 // Adiciona o manipulador de eventos fora do loop
                 document.getElementById("favoritos").addEventListener('click', (event) => {
                     const deleteBtn = event.target;
-                    if (deleteBtn.classList.contains('delete-btn')) {
+                    const confirmDelete = confirm('Você deseja realmente remover esse jogo da sua lista de favoritos?');
+
+                    if (confirmDelete) {
+                        if (deleteBtn.classList.contains('delete-btn')) {
                         const idFavorito = deleteBtn.getAttribute('data-id');
 
                         // Atualiza o array favoriteAppIds removendo o ID clicado
@@ -101,10 +105,18 @@
                         // Remove o elemento do DOM
                         location.reload();
                         //deleteBtn.parentNode.remove();
-                    }
+                    }}
+                    
                 });
             });
 
+            
+            function goBack() {
+            window.history.back();
+        }
+            function goHome() {
+                window.location.href = 'log-user.html';
+            }
     </script>
 </body>
 
