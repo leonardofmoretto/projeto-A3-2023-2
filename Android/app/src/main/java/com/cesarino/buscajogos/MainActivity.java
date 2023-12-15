@@ -2,6 +2,7 @@ package com.cesarino.buscajogos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 BuscarJogo();
+
             }
         });
     }
@@ -60,20 +62,26 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONArray response) {
                         try {
-                            // Assuming your JSON structure is an array directly, not nested in an object
                             for (int i = 0; i < response.length(); i++) {
                                 JSONObject app = response.getJSONObject(i);
+
                                 int appid = app.getInt("appid");
                                 String appName = app.getString("name");
 
-                                // Create a new TextView for each app
                                 TextView textView = new TextView(MainActivity.this);
+                                textView.setId(appid);
                                 textView.setTextSize(21);
                                 textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-
                                 textView.setText(appName);
-
-                                // Add the TextView to the LinearLayout
+                                textView.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        //Snackbar.make(MainActivity.this.getCurrentFocus(),"PLAU! "+ appid, Snackbar.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(MainActivity.this, MontaPage.class);
+                                        intent.putExtra("appid",appid);
+                                        startActivity(intent);
+                                    }
+                                });
                                 lnLinearLayout.addView(textView);
                             }
                         } catch (JSONException e) {
