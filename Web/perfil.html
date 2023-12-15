@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/perfil.css">
 </head>
+
 <body>
     <div id="info"> </div>
     <button id = "Sair" onclick="goHome()">Sair</button>
@@ -15,14 +16,17 @@
     <button id = "Voltar" onclick="goBack()">Voltar</button>
 
     <script>
+        // transforma id do cache em uma const
         const userID = localStorage.getItem('userID');
         console.log('ID do usuário logado:', userID);
 
-        function fetchUserData(userID) {
-            return fetch(`http://localhost:3000/users/${userID}`).then(response => response.json());
+            
+        function acessarDadosUser(userID) {
+            return fetch(`http://localhost:3000/users/${userID}`)
+            .then(response => response.json());
         }
 
-        function fetchGameData(idFavorito) {
+        function acessarDadosJogos(idFavorito) {
             return fetch(`http://localhost:3000/games/gameId?id=${idFavorito}`)
                 .then(response => {
                     if (!response.ok) {
@@ -37,7 +41,7 @@
                 });
         }
 
-        function createGameElement(gameData, idFavorito) {
+        function puxarDadosJogo(gameData, idFavorito) {
             const divFav = document.getElementById("favoritos");
 
             const gameElement = document.createElement('div');
@@ -50,7 +54,7 @@
             divFav.appendChild(gameElement);
         }
 
-        function updateFavoriteAppIds(userID, newFavoriteAppIds) {
+        function atualizaFavoritos(userID, newFavoriteAppIds) {
             // Atualiza o array favoriteAppIds no servidor
             fetch(`http://localhost:3000/users/${userID}`, {
                 method: 'PATCH',
@@ -70,15 +74,15 @@
                 });
         }
 
-        fetchUserData(userID)
+        acessarDadosUser(userID)
             .then(user => {
                 const infoDiv = document.getElementById('info');
                 infoDiv.innerHTML = `<p>Nome: ${user.name}</p><p>Email: ${user.email}</p>`;
 
                 user.favoriteAppIds.forEach(idJogo => {
-                    fetchGameData(idJogo).then(gameData => {
+                    acessarDadosJogos(idJogo).then(gameData => {
                         if (gameData) {
-                            createGameElement(gameData, idJogo);
+                            puxarDadosJogo(gameData, idJogo);
                         } else {
                             const divFav = document.getElementById("favoritos");
                             divFav.innerHTML = `<p>Não conseguimos achar os dados desse jogo :(</p>`;
@@ -100,11 +104,10 @@
                         console.log('Novos dados (IDs removidos):', novosDados);
 
                         // Chama a função para atualizar o array no servidor
-                        updateFavoriteAppIds(userID, novosDados);
+                        atualizaFavoritos(userID, novosDados);
 
                         // Remove o elemento do DOM
                         location.reload();
-                        //deleteBtn.parentNode.remove();
                     }}
                     
                 });

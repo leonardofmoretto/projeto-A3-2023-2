@@ -18,7 +18,7 @@
   <script>
 
     const btnPesquisar = document.getElementById("btn_pesquisar");
-    btnPesquisar.addEventListener('click', searchJson);
+    btnPesquisar.addEventListener('click', procuraJson);
 
     let textBox = document.getElementById("textBox");
     const userID = localStorage.getItem('userID');
@@ -27,10 +27,8 @@
     btnUser.addEventListener('click', acessoUser);
 
     if (userID) {
-      // Use o ID do usuário como necessário na página
       console.log('ID do usuário logado:', userID);
     } else {
-      // Lidar com o caso em que o userID não está presente
       console.log('ID do usuário não encontrado.');
     }
 
@@ -43,17 +41,15 @@
     }
 
 
-    function searchJson() {
-      let filePath = `http://localhost:3000/games/gameName?name=${textBox.value}`;
+    function procuraJson() {
+      let localArquivo = `http://localhost:3000/games/gameName?name=${textBox.value}`;
       document.getElementById("outro").innerHTML = "";
 
-      // Fetch the JSON file asynchronously
-      fetch(filePath)
+      fetch(localArquivo)
         .then(response => {
           if (!response.ok) {
-            throw new Error(`Failed to fetch ${filePath}: ${response.status} ${response.statusText}`);
+            throw new Error(`Não conseguimos localizar: ${localArquivo}: ${response.status} ${response.statusText}`);
           }
-          // Return the JSON promise to the next then block
           return response.json();
         })
         .then(jsonData => {
@@ -63,7 +59,7 @@
           });
         })
         .catch(error => {
-          console.error('Error fetching or parsing JSON file:', error);
+          console.error('Erro ao consultar o arquivo Json:', error);
         });
     }
   </script>

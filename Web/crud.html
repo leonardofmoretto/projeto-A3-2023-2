@@ -29,7 +29,7 @@
                         Nome: ${item.name} |
                         Email: ${item.email} |
                         <button class="update-btn" data-id="${item.id}">Atualizar</button>
-                        <button class="delete-btn" data-id="${item.id}">Excluir Usuário</button>
+                        <button class="delete-btn" data-id="${item.id}">Excluir</button>
                     `;
 
                         dadosDiv.appendChild(userDiv);
@@ -54,8 +54,6 @@
                                     .then(response => response.json())
                                     .then(updatedUser => {
                                         console.log('Usuário atualizado:', updatedUser);
-                                        // Faça qualquer outra ação necessária após a atualização
-                                        // Recarregar os usuários após a atualização
                                         carregarUsuarios();
                                     })
                                     .catch(error => console.error(error));
@@ -88,7 +86,7 @@
                 })
                 .catch(error => console.error(error));
         }
-
+        // Aqui faz o botão ler funcionar.
         document.querySelector('#read').addEventListener('click', carregarUsuarios);
 
         // Função botão voltar a pagina;
