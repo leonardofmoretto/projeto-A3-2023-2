@@ -9,12 +9,8 @@ import { GamesModule } from './games/games.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
-    type: 'mysql',
-    host: 'localhost',
-    port: 3306,
-    username: 'root',
-    password: '456654',
-    database: 'jogos',
+    type: 'sqlite',
+    database: './sqlite/db.sqlite',
     entities: [User],
     synchronize: true,
   }),

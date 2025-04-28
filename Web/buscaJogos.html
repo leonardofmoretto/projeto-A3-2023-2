@@ -42,7 +42,7 @@
 
 
     function procuraJson() {
-      let localArquivo = `http://localhost:3000/games/gameName?name=${textBox.value}`;
+      let localArquivo = `https://buscajogosvercel.vercel.app/games/gameName?name=${textBox.value}`;
       document.getElementById("outro").innerHTML = "";
 
       fetch(localArquivo)
